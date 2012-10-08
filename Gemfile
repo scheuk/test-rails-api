@@ -19,15 +19,17 @@ end
 
 gem 'jquery-rails'
 gem 'mongoid', '~> 3.0.0'
+gem 'restfulie'
 gem 'rspec-rails', :group => [:development, :test]
 
 group :test do
-        gem 'turn'
-        gem 'capybara'
+  gem 'turn'
+  gem 'capybara'
 	gem 'database_cleaner'
 	gem 'mongoid-rspec'
-        gem 'guard-rspec'
-        gem 'launchy'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'rb-fsevent', '~> 0.9.1'
 end
 
 # To use ActiveModel has_secure_password
