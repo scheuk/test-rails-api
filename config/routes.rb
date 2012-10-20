@@ -1,4 +1,10 @@
 Gfgapi::Application.routes.draw do
+  #resources :mischiffs
+  scope 'v1' do
+    match 'mischiffs' => 'api/v1/mischiffs#index'
+  end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
