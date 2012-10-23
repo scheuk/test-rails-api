@@ -1,4 +1,11 @@
 Gfgapi::Application.routes.draw do
+
+  
+
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   #resources :mischiffs
   scope 'v1' do
     match 'mischiffs' => 'api/v1/mischiffs#index'

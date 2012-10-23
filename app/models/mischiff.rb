@@ -6,9 +6,11 @@ class Mischiff
   field :title, type: String
   field :description, type: String
   field :rarity, type: String
-  field :requiresLeaderboard, type: Boolean
+  field :requiresleaderboard, type: Boolean
   field :startDate, type: Date
   field :endDate, type: Date
   field :enabled, type: Boolean
+
+  validates_uniqueness_of :order
 
 end

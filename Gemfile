@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'mongoid', '~> 3.0.0'
 
+#gem "puffer", :git => "git://github.com/puffer/puffer.git"
+gem 'rails_admin'
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -47,3 +51,6 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+
+gem "devise"
