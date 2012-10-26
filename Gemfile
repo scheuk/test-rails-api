@@ -6,6 +6,7 @@ gem 'mongoid', '~> 3.0.0'
 #gem "puffer", :git => "git://github.com/puffer/puffer.git"
 gem 'rails_admin'
 
+gem 'therubyracer'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
