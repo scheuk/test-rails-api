@@ -8,7 +8,7 @@ Gfgapi::Application.routes.draw do
 
   #resources :mischiffs
   scope 'v1' do
-    match 'mischiffs' => 'api/v1/mischiffs#index'
+    match 'mischiffs' => 'api/v1/mischiffs#index', :defaults => { :format => 'json' }
   end
 
 
