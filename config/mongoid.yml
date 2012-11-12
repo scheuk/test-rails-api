@@ -77,3 +77,15 @@ production:
         - 23.23.187.75:27017
       options:
         consistency: :strong
+
+dev:
+  sessions:
+    default:
+      username: spAlphaUser
+      password: spAlphaUserP455
+      database: spAlpha01
+      hosts:
+        - 23.23.187.75:27017
+      options:
+        consistency: :strong
+

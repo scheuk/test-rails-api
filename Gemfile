@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'mongoid', '~> 3.0.0'
+gem 'activemerchant', :require => 'active_merchant'
+gem 'haml'
+gem 'settingslogic'
 
 #gem "puffer", :git => "git://github.com/puffer/puffer.git"
 gem 'rails_admin'

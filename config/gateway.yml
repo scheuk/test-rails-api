@@ -1,0 +1,16 @@
+development: &development
+  mode: test
+  login: seller_1352168715_biz_api1.skillabs.com
+  password: '1352168741'
+  signature: AFcWxV21C7fd0v3bYYYRCpSSRl31AdG2DKOUbLd0tth.hiDWZdJ2QZ7z
+  #application_id: APP-76y884485P519543T
+  application_id: APP-80W284485P519543T
+
+production:
+  <<: *development
+
+test:
+  <<: *development
+
+dev:
+  <<: *development

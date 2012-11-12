@@ -12,6 +12,16 @@ Gfgapi::Application.routes.draw do
     match 'causes' => 'api/v1/causes#index', :defaults => { :format => 'json' }
   end
 
+  ## Callback URL
+  match '/billing/paypal/:id/confirm', :to => 'billing#paypal', :as => :confirm_paypal
+  ## Create payment
+  match '/billing', :to => 'billing#create', :as => :pay_bill
+
+  ## Request URL
+  match '/billing/paypal/:id', :to => 'billing#checkout', :as => :billing
+  match '/billing/thank_you/:id', :to => 'billing#checkout', :as => :billing_thank_you
+
+  match '/paymentform', :to => 'paymentform#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
