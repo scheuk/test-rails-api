@@ -27,6 +27,10 @@ class BillingController < ApplicationController
     #redirect_to :controller => "billing", :action => "checkout", :id => @payment.id
   end
 
+  def thank_you
+
+  end
+
   private
   def get_payment
     @payment = Payment.find(params[:id])

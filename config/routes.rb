@@ -19,7 +19,7 @@ Gfgapi::Application.routes.draw do
 
   ## Request URL
   match '/billing/paypal/:id', :to => 'billing#checkout', :as => :billing
-  match '/billing/thank_you/:id', :to => 'billing#checkout', :as => :billing_thank_you
+  match '/billing/thank_you/:id', :to => 'billing#thank_you', :as => :billing_thank_you
 
   match '/paymentform', :to => 'paymentform#index'
 
