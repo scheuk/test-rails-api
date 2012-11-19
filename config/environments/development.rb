@@ -31,4 +31,9 @@ Gfgapi::Application.configure do
 
   ActiveMerchant::Billing::PaypalExpressGateway.wiredump_device = File.open("/tmp/q.log", "a+")
   ActiveMerchant::Billing::PaypalExpressGateway.wiredump_device.sync = true
+
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+  end
+
 end

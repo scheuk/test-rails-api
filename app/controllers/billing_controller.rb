@@ -19,16 +19,16 @@ class BillingController < ApplicationController
     redirect_to @payment.redirect_url_for(response.token)
   end
 
+  def thank_you
+
+  end
+
   ## CALL BACK
   def paypal
     @payment = @payment.purchase(:token => params[:token], :payer_id => params[:PayerID], :ip => request.remote_ip)
     @payment.save
     redirect_to billing_thank_you_url(@payment)
     #redirect_to :controller => "billing", :action => "checkout", :id => @payment.id
-  end
-
-  def thank_you
-
   end
 
   private

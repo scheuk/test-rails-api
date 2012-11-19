@@ -5,6 +5,7 @@ class Payment
   field :status, type: String
   field :amount, type: Float
   field :transaction_number, type: String
+  belongs_to :cause
 
   PROCESSING, FAILED, SUCCESS = 1, 2, 3
 
@@ -28,17 +29,20 @@ class Payment
     #:ip       => request.remote_ip,
     #:payer_id => params[:payer_id],
     #:token    => params[:token]
-    response = gateway.purchase(amt, options)
+    response = gateway.purchase(amount * 100, options)
+    logger.debug "new response: #{response.inspect}"
     if response.success?
-      self.transaction_num = response.params['transaction_id']
+      logger.debug "transaction successful: #{SUCCESS}"
+      self.transaction_number = response.params['transaction_id']
       self.status = SUCCESS
     else
+      logger.debug "transaction failed: #{FAILED}"
       self.status = FAILED
     end
     return self
-  rescue Exception => e
-    self.status = FAILED
-    return self
+  #rescue Exception => e
+  #  self.status = FAILED
+  #  return self
   end
 
   private
