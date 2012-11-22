@@ -6,6 +6,7 @@ class Payment
   field :amount, type: Float
   field :transaction_number, type: String
   belongs_to :cause
+  belongs_to :gfguser
 
   PROCESSING, FAILED, SUCCESS = 1, 2, 3
 

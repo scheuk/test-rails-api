@@ -15,7 +15,15 @@ class BillingController < ApplicationController
 
   # ASSUMPTION   # payment is valid i.e. amount is entered
   def checkout
-    response = @payment.setup_purchase(:return_url => confirm_paypal_url(@payment), :cancel_return_url => paymentform_url)
+    response = @payment.setup_purchase(:ip => request.remote_ip,
+                                       :description => "Donation",
+                                       :return_url => confirm_paypal_url(@payment),
+                                       :cancel_return_url => paymentform_url,
+                                       :no_shipping => 1,
+                                       :items => [{ :name => "Donation to #{@cause.name}",
+                                                    :number => 1,
+                                                    :quantity => 1,
+                                                    :amount => @payment.amount * 100 }])
     redirect_to @payment.redirect_url_for(response.token)
   end
 
@@ -34,6 +42,7 @@ class BillingController < ApplicationController
   private
   def get_payment
     @payment = Payment.find(params[:id])
+    @cause = Cause.find(@payment.cause_id)
     @payment && @payment.valid? || invalid_url
   end
 end
