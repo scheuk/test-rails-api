@@ -11,6 +11,7 @@ class Cause
   field :startDate, type: Date
   field :endDate, type: Date
   field :isFeatured, type: Boolean
+  field :donations, type: Float
   has_many :payments
 
   validates :name, presence: true

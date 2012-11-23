@@ -1,4 +1,5 @@
 = form_for @payment ||= Payment.new, :url => pay_bill_url, :html => {:id => :payForm} do |p|
+  = p.collection_select(:gfguser_id, Gfguser.all, :id, :username)
   = p.collection_select(:cause_id, Cause.all, :id, :name)
   = p.text_field :amount
   = p.submit 'Donate'

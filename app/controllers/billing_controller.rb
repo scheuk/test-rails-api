@@ -35,6 +35,13 @@ class BillingController < ApplicationController
   def paypal
     @payment = @payment.purchase(:token => params[:token], :payer_id => params[:PayerID], :ip => request.remote_ip)
     @payment.save
+    #logger.debug "Payment Object: #{@payment.inspect}"
+    if @cause.donations.nil?
+      @cause.donations = @payment.amount
+    else
+      @cause.donations = @cause.donations + @payment.amount
+    end
+    @cause.save
     redirect_to billing_thank_you_url(@payment)
     #redirect_to :controller => "billing", :action => "checkout", :id => @payment.id
   end

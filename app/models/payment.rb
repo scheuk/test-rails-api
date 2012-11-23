@@ -31,13 +31,13 @@ class Payment
     #:payer_id => params[:payer_id],
     #:token    => params[:token]
     response = gateway.purchase(amount * 100, options)
-    logger.debug "new response: #{response.inspect}"
+    #logger.debug "new response: #{response.inspect}"
     if response.success?
-      logger.debug "transaction successful: #{SUCCESS}"
+      #logger.debug "transaction successful: #{SUCCESS}"
       self.transaction_number = response.params['transaction_id']
       self.status = SUCCESS
     else
-      logger.debug "transaction failed: #{FAILED}"
+      #logger.debug "transaction failed: #{FAILED}"
       self.status = FAILED
     end
     return self

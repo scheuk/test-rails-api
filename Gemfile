@@ -5,6 +5,7 @@ gem 'mongoid', '~> 3.0.0'
 gem 'activemerchant', :require => 'active_merchant'
 gem 'haml'
 gem 'settingslogic'
+gem 'acts_as_api'
 
 #gem "puffer", :git => "git://github.com/puffer/puffer.git"
 gem 'rails_admin'
@@ -28,7 +29,7 @@ end
 
 gem 'jquery-rails'
 #gem 'mongoid_autoinc_id'
-gem 'restfulie'
+#gem 'restfulie'
 gem 'rspec-rails', :group => [:development, :test]
 
 group :test do
