@@ -1,4 +1,7 @@
-%p Thank you for donating $#{@payment.amount} to #{@cause.name}
-%p #{@cause.name} now has a total donations of $#{@cause.donations}
+- if @payment.status = "3"
+  %p Thank you for donating $#{@payment.amount} to #{@cause.name}
+  %p #{@cause.name} now has a total donations of $#{@cause.donations}
+- else
+  %p We are sorry you canceled your donation
 
 

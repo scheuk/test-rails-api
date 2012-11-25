@@ -28,7 +28,6 @@ class BillingController < ApplicationController
   end
 
   def thank_you
-
   end
 
   ## CALL BACK

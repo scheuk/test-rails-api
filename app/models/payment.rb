@@ -2,15 +2,17 @@ class Payment
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :status, type: String
+  field :status, type: String, default: "1"
   field :amount, type: Float
   field :transaction_number, type: String
   belongs_to :cause
   belongs_to :gfguser
 
-  PROCESSING, FAILED, SUCCESS = 1, 2, 3
+  PROCESSING, FAILED, SUCCESS, CANCELED = 1, 2, 3, 4
 
   validates :amount, :presence => true, :numericality => { :greater_than => 0 }
+  validates :cause_id, :presence => true
+  validates :gfguser_id, :presence => true
 
   def self.conf
     @@gateway_conf ||= YAML.load_file(Rails.root.join('config/gateway.yml').to_s)[Rails.env]

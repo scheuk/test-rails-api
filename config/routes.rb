@@ -1,7 +1,5 @@
 Gfgapi::Application.routes.draw do
 
-  
-
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -10,6 +8,10 @@ Gfgapi::Application.routes.draw do
   scope 'v1' do
     match 'mischiffs' => 'api/v1/mischiffs#index', :defaults => { :format => 'json' }
     match 'causes' => 'api/v1/causes#index', :defaults => { :format => 'json' }
+    match 'donations' => 'api/v1/donations#create', :via => [:get, :post], :defaults => { :format => 'json' }
+    match 'donations/:id' => 'api/v1/donations#show', :defaults => { :format => 'json' }
+    match 'donations/:id/confirm' => 'api/v1/donations#paypal', :as => :confirm_donation
+    match 'donations/:id/cancel' => 'api/v1/donations#cancel', :as => :cancel_donation
   end
 
   ## Callback URL
@@ -21,7 +23,7 @@ Gfgapi::Application.routes.draw do
   match '/billing/paypal/:id', :to => 'billing#checkout', :as => :billing
   match '/billing/thank_you/:id', :to => 'billing#thank_you', :as => :billing_thank_you
 
-  match '/paymentform', :to => 'paymentform#index'
+  get '/paymentform', :to => 'paymentform#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
