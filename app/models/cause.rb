@@ -1,6 +1,5 @@
 class Cause
   include Mongoid::Document
-  store_in
 
   field :name, type: String
   field :description, type: String

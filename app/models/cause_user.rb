@@ -1,7 +1,6 @@
 class CauseUser
   include Mongoid::Document
 
-
   field :username, type: String
   field :location, type: String
   field :score, type: Integer
