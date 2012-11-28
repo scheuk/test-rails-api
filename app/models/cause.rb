@@ -1,5 +1,6 @@
 class Cause
   include Mongoid::Document
+  store_in
 
   field :name, type: String
   field :description, type: String
@@ -13,6 +14,9 @@ class Cause
   field :isFeatured, type: Boolean
   field :donations, type: Float
   has_many :payments
+
+  embeds_many :cause_users
+  accepts_nested_attributes_for :cause_users
 
   validates :name, presence: true
 

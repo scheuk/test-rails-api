@@ -6,6 +6,7 @@ gem 'activemerchant', :require => 'active_merchant'
 gem 'haml'
 gem 'settingslogic'
 gem 'acts_as_api'
+#gem 'rabl'
 
 #gem "puffer", :git => "git://github.com/puffer/puffer.git"
 gem 'rails_admin'
