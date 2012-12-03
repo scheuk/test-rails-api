@@ -10,5 +10,6 @@ class Gfguser
   field :location, type: String
 
   has_many :payments
+  has_many :causeusers
 
 end

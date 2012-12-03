@@ -39,10 +39,6 @@ GEM
     activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    acts_as_api (0.4.1)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      rack (>= 1.1.0)
     addressable (2.3.2)
     ansi (1.4.3)
     arel (3.0.2)
@@ -129,6 +125,9 @@ GEM
     origin (1.0.9)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
+    rabl (0.7.8)
+      activesupport (>= 2.3.14)
+      multi_json (~> 1.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -225,7 +224,6 @@ PLATFORMS
 
 DEPENDENCIES
   activemerchant
-  acts_as_api
   capybara
   coffee-rails (~> 3.2.1)
   database_cleaner
@@ -236,6 +234,7 @@ DEPENDENCIES
   launchy
   mongoid (~> 3.0.0)
   mongoid-rspec
+  rabl
   rails (= 3.2.8)
   rails_admin
   rb-fsevent (~> 0.9.1)

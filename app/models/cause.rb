@@ -11,11 +11,9 @@ class Cause
   field :startDate, type: Date
   field :endDate, type: Date
   field :isFeatured, type: Boolean
-  field :donations, type: Float
+  field :donations, type: Float, default: 0
   has_many :payments
-
-  embeds_many :cause_users
-  accepts_nested_attributes_for :cause_users
+  has_many :causeusers
 
   validates :name, presence: true
 

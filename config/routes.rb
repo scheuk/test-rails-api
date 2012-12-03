@@ -4,10 +4,15 @@ Gfgapi::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  #resources :mischiffs
+  #resources :testresourse
   scope 'v1' do
     match 'mischiffs' => 'api/v1/mischiffs#index', :defaults => { :format => 'json' }
-    match 'causes' => 'api/v1/causes#index', :defaults => { :format => 'json' }
+    match 'causes' => 'api/v1/causes#index', :via => :get, :defaults => { :format => 'json' }
+    match 'causes' => 'api/v1/causes#create', :via => :post, :defaults => { :format => 'json' }
+    match 'causes/:id' => 'api/v1/causes#show', :via => :get, :defaults => {:format => 'json'}
+    match 'causes/:id' => 'api/v1/causes#update', :via => :post, :defaults => { :format => 'json' }
+    match 'causeuser' => 'api/v1/causeuser#create', :via => :post, :defaults => { :format => 'json' }
+    match 'causeuser/:id' => 'api/v1/causeuser#update', :via => :post, :defaults => { :format => 'json' }
     match 'donations' => 'api/v1/donations#create', :via => [:get, :post], :defaults => { :format => 'json' }
     match 'donations/:id' => 'api/v1/donations#show', :defaults => { :format => 'json' }
     match 'donations/:id/confirm' => 'api/v1/donations#paypal', :as => :confirm_donation
