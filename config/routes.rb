@@ -1,5 +1,13 @@
 Gfgapi::Application.routes.draw do
 
+  get "gfgusers/create"
+
+  get "gfgusers/update"
+
+  get "gfgusers/show"
+
+  get "gfgusers/fbid"
+
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -7,6 +15,10 @@ Gfgapi::Application.routes.draw do
   #resources :testresourse
   scope 'v1' do
     match 'mischiffs' => 'api/v1/mischiffs#index', :defaults => { :format => 'json' }
+    match 'gfgusers' => 'api/v1/gfgusers#create', :via => :post, :defaults => { :format => 'json' }
+    match 'gfgusers/:id' => 'api/v1/gfgusers#show', :via => :get, :defaults => { :format => 'json' }
+    match 'gfgusers/:id' => 'api/v1/gfgusers#update', :via => :post, :defaults => { :format => 'json' }
+    match 'gfgusers/fb/:fbid' => 'api/v1/gfgusers#fbid', :via => :get, :defaults => { :format => 'json' }
     match 'causes' => 'api/v1/causes#index', :via => :get, :defaults => { :format => 'json' }
     match 'causes' => 'api/v1/causes#create', :via => :post, :defaults => { :format => 'json' }
     match 'causes/:id' => 'api/v1/causes#show', :via => :get, :defaults => {:format => 'json'}

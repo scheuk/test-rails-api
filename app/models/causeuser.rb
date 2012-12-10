@@ -7,6 +7,7 @@ class Causeuser
   belongs_to :cause
   belongs_to :gfguser
 
-  #validates :cause_id, :uniqueness => { scope => :gfguser_id }
+  validates :cause_id, presence: true  #:uniqueness => { scope => :gfguser_id }
+  validates :gfguser_id, presence: true
 
 end
