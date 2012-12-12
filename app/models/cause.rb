@@ -12,6 +12,7 @@ class Cause
   field :endDate, type: Date
   field :isFeatured, type: Boolean
   field :donations, type: Float, default: 0
+  field :createdBy, type: String
   has_many :payments
   has_many :causeusers
 
