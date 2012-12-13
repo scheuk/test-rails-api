@@ -1,5 +1,3 @@
-object false
+object @cause
 
-node :status do
-  "success"
-end
+extends "api/v1/causes/show"

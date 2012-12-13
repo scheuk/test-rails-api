@@ -3,6 +3,7 @@ class Causeuser
 
   field :score, type: Integer
   field :mirrorShield, type: Boolean
+  field :active, type: Boolean
 
   belongs_to :cause
   belongs_to :gfguser

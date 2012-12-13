@@ -18,6 +18,6 @@ class Api::V1::CausesController < ApplicationController
   end
 
   def create
-    Cause.create params[:cause]
+    @cause = Cause.create params[:cause]
   end
 end
