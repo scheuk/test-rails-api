@@ -10,6 +10,9 @@ class Gfguser
   field :location, type: String
   field :mischiffs, type: Array
 
+  validates :fbid, uniqueness: true
+  index({fbid: 1},{unique: true})
+
   has_many :payments
   has_many :causeusers
 
