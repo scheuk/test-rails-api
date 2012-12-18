@@ -14,3 +14,9 @@ test:
 
 dev:
   <<: *development
+
+qa:
+  <<: *development
+
+stage:
+  <<: *development

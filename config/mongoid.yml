@@ -89,3 +89,20 @@ dev:
       options:
         consistency: :strong
 
+qa:
+  sessions:
+    default:
+      database: gfgapi_qa
+      hosts:
+        - 10.0.20.175:27017
+      options:
+        consistency: :strong
+
+stage:
+  sessions:
+    default:
+      database: gfgapi_stage
+      hosts:
+        - 10.0.20.175:27017
+      options:
+        consistency: :strong
