@@ -1,5 +1,6 @@
 class Gfguser
   include Mongoid::Document
+  include Mongoid::Timestamps
   #store_in collection: "_ua_012"
 
   field :username, type: String
@@ -9,6 +10,7 @@ class Gfguser
   field :country, type: String
   field :location, type: String
   field :mischiffs, type: Array
+  field :spins, type: Array
 
   validates :fbid, uniqueness: true
   index({fbid: 1},{unique: true})

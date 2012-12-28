@@ -1,5 +1,6 @@
 class Causeuser
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :score, type: Integer
   field :mirrorShield, type: Boolean
