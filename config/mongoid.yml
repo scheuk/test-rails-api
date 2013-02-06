@@ -70,22 +70,18 @@ test:
 production:
   sessions:
     default:
-      username: spAlphaUser
-      password: spAlphaUserP455
-      database: spAlpha01
+      database: gfgapi
       hosts:
-        - 23.23.187.75:27017
+        - 10.0.20.0:27017
       options:
         consistency: :strong
 
 dev:
   sessions:
     default:
-      username: spAlphaUser
-      password: spAlphaUserP455
-      database: spAlpha01
+      database: gfgapi_dev
       hosts:
-        - 23.23.187.75:27017
+        - 10.0.20.175:27017
       options:
         consistency: :strong
 
