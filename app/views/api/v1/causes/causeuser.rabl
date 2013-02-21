@@ -4,7 +4,7 @@ attributes :_id, :score, :mirrorShield, :gfguser_id
 
 node do |cuser|
   q = Gfguser.find(cuser.gfguser_id)
-  {:username => q.username, :location => q.location}
+  {:username => q.username, :location => q.location, :country => q.country}
 end
 
 #node :username do |cuser|
